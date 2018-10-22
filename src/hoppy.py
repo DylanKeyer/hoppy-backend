@@ -2,7 +2,7 @@ from flask import Flask, jsonify, request
 from flask_cors import CORS
 
 from .entities.entity import Session, engine, Base
-from .entities.models import Beer, Brewery, Venue, User, Review, UserSocialMedia
+from .entities.models import Beer, Brewery, Venue, User, Review, UserSocialMedia, BeerType
 from .entities.schemas import BeerSchema, BrewerySchema, VenueSchema, UserSchema, ReviewSchema, UserSocialMediaSchema
 
 app= Flask(__name__)
@@ -20,9 +20,9 @@ def get_beers():
     session = Session()
     beer_objects = session.query(Beer).all()
     
-    # transforn to serializable form format for JSON
+    # transform to serializable format for JSON
     beer_schema = BeerSchema(many=True)
-    beers = beer_schema.dump(beer_objects)
+    beers, errors = beer_schema.dump(beer_objects)
     
     # serialize to JSON
     session.close()
@@ -32,15 +32,13 @@ def get_beers():
 def add_beers():
     posted_beer = BeerSchema()\
         .load(request.get_json())
-    beer = Beer(**posted_beer.data, id='1')
+    beer = Beer(**posted_beer.data)
     
     session = Session()
     session.add(beer)
     session.commit()
     
-    new_beer = BeerSchema().dump(beer).data
     session.close()
-    return jsonify(new_beer), 201
     return 'Beer successfully added'
     
     

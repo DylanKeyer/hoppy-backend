@@ -1,18 +1,13 @@
 from marshmallow import Schema, fields
-
-class ExamSchema(Schema):
-    id = fields.Number()
-    title = fields.Str()
-    description = fields.Str()
-    created_at = fields.DateTime()
-    updated_at = fields.DateTime()
-    last_updated_by = fields.Str()
+from marshmallow_enum import EnumField
+from .enums import BeerType, BreweryType, SocialMediaType, ServingType
 
 class BeerSchema(Schema):
     id = fields.Number()
     brewery_id = fields.Number()
     '''Non-constraint columns'''
     beer_name = fields.Str()
+    beer_type = EnumField(BeerType)
     description = fields.Str()
     abv = fields.Number()
     ibu = fields.Number()
@@ -22,7 +17,7 @@ class BeerSchema(Schema):
 class BrewerySchema(Schema):
     '''Constraints'''
     id = fields.Number()
-    brewery_type_id = fields.Number()
+    brewery_type = EnumField(BreweryType)
     '''Non-constraint columns'''
     brewery_name = fields.Str()
     description = fields.Str()
@@ -31,7 +26,7 @@ class UserSchema(Schema):
     '''Constraints'''
     id = fields.Number()
     '''Non-constraint columns'''
-    brewery_name = fields.Str()
+    user_name = fields.Str()
     description = fields.Str()
     created_dtm = fields.DateTime()
     updated_dtm = fields.DateTime() 
@@ -53,7 +48,7 @@ class ReviewSchema(Schema):
     beer_id = fields.Number()
     user_id = fields.Number()
     venue_id = fields.Number()
-    serving_type_id = fields.Number()
+    serving_type = EnumField(ServingType)
     '''Non-constraint columns'''
     title = fields.Str()
     description = fields.Str()
@@ -63,6 +58,6 @@ class ReviewSchema(Schema):
 	
 class UserSocialMediaSchema(Schema):
     user_id = fields.Number()
-    social_media_type_id = fields.Number()
+    social_media_type = EnumField(SocialMediaType)
     link = fields.Str()
 	
