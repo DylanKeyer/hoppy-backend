@@ -2,7 +2,34 @@ from sqlalchemy import Column, String, Integer, Float, Text, Enum
 from sqlalchemy import ForeignKey
 from .entity import Base, Entity
 from .enums import BeerType, BreweryType, SocialMediaType, ServingType
-	
+
+##SYSTEM TABLES##
+class Tenant(Base):
+    __tablename__ = 'sys_tenants'
+    '''Contains all base tenant information'''
+    id = Column(Integer, primary_key=true)
+    country_code = Column(String(2), nullable=False) # 2-digit ISO code
+    organization_name = Column(Text, nullable=False) # company name
+    administrative_area = Column(String(64), nullable=False) # state/province/region
+    sub_administrative_area = Column(String(64)) # district/county
+    locality = Column(String(128), nullable=False) # city/town
+    dependent_locality = Column(String(128)) # unused for now
+    postal_code = Column(String(32), nullable=False) # postal code/ZIP code
+    thoroughfare = Column(TEXT, nullable=False) # street address
+    premise = Column(String(32)) # apartment/suite/box number
+    sub_premise = Column(String(32)) # sub-premise
+
+class TenantToBreweryMM(Base):
+    __tablename__ = 'sys_tenant_brewery_MM'
+    '''Maps the tenant to the breweries that they own and have rights to'''
+    '''Constraints'''
+    tenant_id = Column(Integer, ForeignKey('tenant.id'), nullable=False)
+
+
+class User(Base):
+    __tablename__ = 'sys_users'
+    tenant_id = Column(Integer, ForeignKey('tenant.id'), nullable=False)
+
 class Beer(Entity, Base):
     __tablename__ = 'beer'
     '''Constraints'''

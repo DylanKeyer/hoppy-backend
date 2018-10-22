@@ -7,7 +7,7 @@ class BeerSchema(Schema):
     brewery_id = fields.Number()
     '''Non-constraint columns'''
     beer_name = fields.Str()
-    beer_type = EnumField(BeerType)
+    beer_type = EnumField(BeerType, by_value=True)
     description = fields.Str()
     abv = fields.Number()
     ibu = fields.Number()
