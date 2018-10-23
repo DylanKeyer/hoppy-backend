@@ -15,7 +15,7 @@ Base.metadata.create_all(engine)
 app = Flask(__name__)
 
 # enable CORS so Angular frontend can generate requests
-CORS(app)
+cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 # enable flask-restful API functionality
 api = Api(app)
