@@ -34,6 +34,7 @@ class BreweryType(enum.Enum):
     MICRO = 'Micro Brewery'
     REGIONAL = 'Regional Brewery'
     HOME = 'Home Brewery'
+    BREW_PUB = 'Brew Pub'
 
 class ServingType(enum.Enum):
     BOTTLE = 'Bottle'

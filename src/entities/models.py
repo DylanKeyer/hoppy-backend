@@ -4,10 +4,11 @@ from .entity import Base, Entity
 from .enums import BeerType, BreweryType, SocialMediaType, ServingType
 
 ##SYSTEM TABLES##
+""" 
 class Tenant(Base):
     __tablename__ = 'sys_tenants'
     '''Contains all base tenant information'''
-    id = Column(Integer, primary_key=true)
+    id = Column(Integer, primary_key=True)
     country_code = Column(String(2), nullable=False) # 2-digit ISO code
     organization_name = Column(Text, nullable=False) # company name
     administrative_area = Column(String(64), nullable=False) # state/province/region
@@ -25,11 +26,10 @@ class TenantToBreweryMM(Base):
     '''Constraints'''
     tenant_id = Column(Integer, ForeignKey('tenant.id'), nullable=False)
 
-
 class User(Base):
     __tablename__ = 'sys_users'
     tenant_id = Column(Integer, ForeignKey('tenant.id'), nullable=False)
-
+ """
 class Beer(Entity, Base):
     __tablename__ = 'beer'
     '''Constraints'''
