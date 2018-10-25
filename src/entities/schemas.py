@@ -2,6 +2,10 @@ from marshmallow import Schema, fields
 from marshmallow_enum import EnumField
 from .enums import BeerType, BreweryType, SocialMediaType, ServingType
 
+class SysUserSchema(schema):
+    id = fields.Number()
+    person_number = fields.String()
+
 class BeerSchema(Schema):
     id = fields.Number()
     brewery_id = fields.Number()

@@ -2,10 +2,16 @@ from flask_restful import Resource
 from flask import request, jsonify
 
 from ..entities.entity import Session, engine, Base
-from ..entities.models import Beer, Brewery, Venue, User, Review, UserSocialMedia, BeerType
+from ..entities.models import Beer, Brewery, Venue, User, Review, UserSocialMedia, BeerType, SysUser, SysUserAccount
 from ..entities.schemas import BeerSchema, BrewerySchema, VenueSchema, UserSchema, ReviewSchema, UserSocialMediaSchema
+from ..entities.schema import SysUserSchema
 
 from .base import api_response
+
+class SysUserResource(Resource):
+    def get(self, sys_user_id):
+        session = Session()
+        sys_user_schema = SysUserSchema()
 
 class BeerResource(Resource):
     def get(self, beer_id=None):

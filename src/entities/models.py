@@ -1,10 +1,11 @@
 from sqlalchemy import Column, String, Integer, Float, Text, Enum
 from sqlalchemy import ForeignKey
+from passlib.apps import custom_app_context as pwd_context
+
 from .entity import Base, Entity
 from .enums import BeerType, BreweryType, SocialMediaType, ServingType
 
 ##SYSTEM TABLES##
-""" 
 class Tenant(Base):
     __tablename__ = 'sys_tenants'
     '''Contains all base tenant information'''
@@ -16,7 +17,7 @@ class Tenant(Base):
     locality = Column(String(128), nullable=False) # city/town
     dependent_locality = Column(String(128)) # unused for now
     postal_code = Column(String(32), nullable=False) # postal code/ZIP code
-    thoroughfare = Column(TEXT, nullable=False) # street address
+    thoroughfare = Column(Text, nullable=False) # street address
     premise = Column(String(32)) # apartment/suite/box number
     sub_premise = Column(String(32)) # sub-premise
 
@@ -24,12 +25,28 @@ class TenantToBreweryMM(Base):
     __tablename__ = 'sys_tenant_brewery_MM'
     '''Maps the tenant to the breweries that they own and have rights to'''
     '''Constraints'''
+    id = Column(Integer, primary_key=True)
     tenant_id = Column(Integer, ForeignKey('tenant.id'), nullable=False)
 
-class User(Base):
-    __tablename__ = 'sys_users'
+class SysUser(Base):
+    __tablename__ = 'sys_user'
+    id = Column(Integer, primary_key=True)
+    person_number = Column(String(16), nullable=False)
     tenant_id = Column(Integer, ForeignKey('tenant.id'), nullable=False)
- """
+    
+class SysUserAccount(Base):
+    __tablename__ = 'sys_user_account'
+    sys_user_id = Column(Integer, ForeignKey('sys_user.id'), nullable=False)
+    email = Column(String(64), nullable=False)
+    username = Column(String(64), nullable=False)
+    password_hash = Column(String(128), nullable=False)
+
+    def hash_password(self, plain_text_password):
+        self.password_hash = pwd_context.encrypt(plain_text_password)
+
+    def verify_password(self, plain_text_password):
+        return pwd_context.verify(plain_text_password, self.password_hash)
+
 class Beer(Entity, Base):
     __tablename__ = 'beer'
     '''Constraints'''
