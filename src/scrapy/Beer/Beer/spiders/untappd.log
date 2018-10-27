@@ -1,0 +1,2 @@
+INFO:scrapy.utils.log:Scrapy 1.4.0 started (bot: Beer)
+INFO:scrapy.utils.log:Overridden settings: {'BOT_NAME': 'Beer', 'CONCURRENT_REQUESTS': 8, 'LOG_ENABLED': False, 'NEWSPIDER_MODULE': 'Beer.spiders', 'RETRY_HTTP_CODES': [500, 503, 504, 400, 403, 404, 408, 429], 'RETRY_TIMES': 10, 'SPIDER_MODULES': ['Beer.spiders'], 'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36'}
