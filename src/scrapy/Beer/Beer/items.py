@@ -2,18 +2,18 @@ from scrapy import Item, Field
 
 class Beer(Item):
     id = Field()
-    beer__name = Field()
+    beer_name = Field()
     brewery_id = Field()
-    beer_style = Field()
+    beer_type = Field()
     abv = Field()
     ibu = Field()
     description = Field()
-    creation_dtm = Field()
+    created_dtm = Field()
     updated_dtm = Field()
 
 class Brewery(Item):
     id = Field()
-    name = Field()
+    brewery_name = Field()
     brewery_type = Field()
     description = Field()
     created_dtm = Field()
@@ -43,11 +43,9 @@ class Review(Item):
     beer_id = Field()
     venue_id = Field()
     created_dtm = Field()
-    updated_dt = Field()
+    updated_dtm = Field()
     
 class User(Item):
     id = Field()
-    name = Field()
-    #facebook = Field()
-    
+    name = Field()    
     

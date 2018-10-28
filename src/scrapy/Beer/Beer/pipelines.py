@@ -1,16 +1,25 @@
-from Beer.items import Beer, Brewery, BeerReview, User, Venue
+from Beer.items import Beer, Brewery, Review, User, Venue
 import MySQLdb
+import json
+import requests
+import logging
 
-class HoppyPipeline(object):
+class HoppyAPIPipeline(object):
     def __init__(self):
-        self.__base_url = 'http://localhost:5000/'
-        self.url = self.__base_url
-    
+        self.__base_url = 'http://localhost:5000/api/'
+        self.urls = {
+            'beer': self.__base_url + 'beer',
+            'brewery': 'http://localhost:5000/api/brewery'
+        }
+        self.headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
+
     def process_item(self, item, spider):
+        json_data = json.dumps(dict(item))
+        logging.debug("Attempting to add item: " + str(json_data))
         if isinstance(item, Beer):
-            self.url += 'beer' 
+            r = requests.post(self.urls['beer'], data=json_data)
         elif isinstance(item, Brewery):
-            self.url += 'brewery'
+            r = requests.post(self.urls['brewery'], data=json_data)
 
 class MySQLPipeline(object):
     def __init__(self):
@@ -35,7 +44,7 @@ class MySQLPipeline(object):
                                                                 brewery_type_id, created_dtm, updated_dtm) 
                                    VALUES (%(brewery_id)s, %(name)s, %(description)s, 
                                             %(brewery_type_id)s, %(created_dtm)s), %(updated_dtm)s""", item)
-        elif isinstance(item, BeerReview):
+        elif isinstance(item, Review):
             self.replace_into("""REPLACE INTO beer.review (review_id, user_id, beer_id, title, text,
                                                               created_dtm, rating, serving_type_id, venue_id) 
                                    VALUES (%(review_id)s, %(user_id)s, %(beer_id)s, %(title)s, %(text)s,
