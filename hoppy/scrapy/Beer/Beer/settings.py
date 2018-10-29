@@ -44,7 +44,6 @@ DOWNLOADER_MIDDLEWARES = {
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 CONCURRENT_REQUESTS = 8
-CONCURRENT_ITEMS = 2
 
 # Configure a delay for requests for the same website (default: 0)
 # See http://scrapy.readthedocs.org/en/latest/topics/settings.html#download-delay
@@ -82,6 +81,7 @@ DEFAULT_REQUEST_HEADERS = {
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
     'Beer.pipelines.HoppyAPIPipeline': 300,
+   # 'Beer.pipelines.JsonWriterPipeline': 301
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

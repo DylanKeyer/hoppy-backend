@@ -1,0 +1,1152 @@
+INFO:scrapy.utils.log:Scrapy 1.4.0 started (bot: Beer)
+INFO:scrapy.utils.log:Overridden settings: {'BOT_NAME': 'Beer', 'CONCURRENT_ITEMS': 2, 'CONCURRENT_REQUESTS': 8, 'NEWSPIDER_MODULE': 'Beer.spiders', 'RETRY_HTTP_CODES': [500, 503, 504, 400, 403, 404, 408, 429], 'RETRY_TIMES': 10, 'SPIDER_MODULES': ['Beer.spiders'], 'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36'}
+INFO:scrapy.middleware:Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+INFO:scrapy.middleware:Enabled downloader middlewares:
+['scrapy_proxies.RandomProxy',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'random_useragent.RandomUserAgentMiddleware',
+ 'Beer.middlewares.TooManyRequestsRetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO:scrapy.middleware:Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO:scrapy.middleware:Enabled item pipelines:
+['Beer.pipelines.HoppyAPIPipeline', 'Beer.pipelines.JsonWriterPipeline']
+INFO:scrapy.core.engine:Spider opened
+INFO:scrapy.extensions.logstats:Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+DEBUG:scrapy.extensions.telnet:Telnet console listening on 127.0.0.1:6023
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://185.136.151.20:39417>, 100 proxies left
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/login/> (referer: None)
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://110.232.86.69:23500>, 100 proxies left
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (303) to <GET https://untappd.com/home> from <POST https://untappd.com/login>
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://36.67.95.131:39640>, 100 proxies left
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/home> (referer: https://untappd.com/login/)
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://201.174.52.24:50705>, 100 proxies left
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/search?q=%22%22&type=brewery> (referer: https://untappd.com/home)
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/1204
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://109.195.210.117:32231>, 100 proxies left
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/1142
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/549
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/157
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/905
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/459
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/765
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/2898
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/68
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/2507
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/441
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/4586
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/524
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://91.82.226.125:8080>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://170.246.152.2:18086>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://46.39.245.204:42488>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://62.205.169.74:53281>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://93.177.199.49:61213>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://219.91.166.214:35637>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://191.102.104.203:52666>, 100 proxies left
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/241
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/1514
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/1326
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/2813
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/3735
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/4565
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/956
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/49
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/259
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/44
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/62
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/StoneBrewing> from <GET https://untappd.com/brewery/1204>
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://93.171.130.189:53281>, 100 proxies left
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/2470
+DEBUG:root:More breweries found!
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/BallastPoint> from <GET https://untappd.com/brewery/68>
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://78.139.243.219:51911>, 100 proxies left
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/bellsbrewery> from <GET https://untappd.com/brewery/2507>
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://77.120.38.125:42568>, 100 proxies left
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/gooseisland> from <GET https://untappd.com/brewery/2898>
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://128.199.65.33:8080>, 100 proxies left
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/firestonewalker> from <GET https://untappd.com/brewery/524>
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/LagunitasBrewingCo> from <GET https://untappd.com/brewery/765>
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://46.39.245.204:42488>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://85.132.110.127:38735>, 100 proxies left
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/southerntierbrewing> from <GET https://untappd.com/brewery/4586>
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/DeschutesBrewery> from <GET https://untappd.com/brewery/441>
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://1.20.100.145:39217>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://191.252.200.7:8080>, 100 proxies left
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/StoneBrewing> (referer: https://untappd.com/search?q=%22%22&type=brewery)
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://181.196.244.170:60304>, 100 proxies left
+DEBUG:root:BREWERY IS HERE: {'id': '1204', 'brewery_name': 'Stone Brewing', 'brewery_type': 'Regional Brewery', 'description': 'Founded by Greg Koch and Steve Wagner in 1996, San Diego-based Stone Brewing is the 9th largest craft brewer in the United States. Stone has been listed on the Inc. 500 | 5000 Fastest Growing Private Companies list 11 times, and has been called the “All-time Top Brewery on Planet Earth” by BeerAdvocate magazine twice.   The multifaceted company will be the first American craft brewer to independently build, own and operate a brewery in Europe, and is also building a production brewery and destination restaurant in Richmond, Virginia. Brewing at both locations is anticipated to begin in spring 2016. Known for its bold, flavorful and largely hop-centric beers, Stone has earned a reputation for brewing outstanding, unique beers while maintaining an unwavering commitment to sustainability, business ethics, philanthropy and the art of brewing.', 'created_dtm': '2010-09-29 00:00:00'}
+DEBUG:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): localhost
+DEBUG:requests.packages.urllib3.connectionpool:http://localhost:5000 "POST /api/brewery HTTP/1.1" 500 37
+DEBUG:root:ENTERING JSON PIPELINE
+DEBUG:scrapy.core.scraper:Scraped from <200 https://untappd.com/StoneBrewing>
+None
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/gooseisland> (referer: https://untappd.com/search?q=%22%22&type=brewery)
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/> from <GET https://untappd.com/search/more_search/brewery?q=b&offset=25&sort=all>
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/LagunitasBrewingCo> (referer: https://untappd.com/search?q=%22%22&type=brewery)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/BallastPoint> (referer: https://untappd.com/search?q=%22%22&type=brewery)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/firestonewalker> (referer: https://untappd.com/search?q=%22%22&type=brewery)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/DeschutesBrewery> (referer: https://untappd.com/search?q=%22%22&type=brewery)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/southerntierbrewing> (referer: https://untappd.com/search?q=%22%22&type=brewery)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/bellsbrewery> (referer: https://untappd.com/search?q=%22%22&type=brewery)
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://191.241.33.238:39188>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://185.136.151.20:39417>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://201.174.52.24:50705>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://103.88.234.251:38045>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://91.185.26.23:46227>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://46.149.35.213:50805>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://186.226.164.168:23500>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://110.235.201.6:45179>, 100 proxies left
+DEBUG:root:BREWERY IS HERE: {'id': '2898', 'brewery_name': 'Goose Island Beer Co.', 'brewery_type': 'Macro Brewery', 'description': 'Our famous beer began with a trip across Europe, when Goose Island founder (and unabashed beer lover) John Hall took a tour across the continent. Pint by pint, he savored the styles and selections of brews in every region, and thought to himself, “America deserves some damn fine beer like this, too.”  Craft brewing wasn’t widely known at the time, but upon return from his European sojourn, John set out to change all that. He settled down in his hometown of Chicago—a city perfect for craft beer, with rapidly evolving tastes and the largest system of fresh water on the planet. And then he got to brewing.  First he made some stellar beer. Then he invited his consumers in to watch his process at the brewery, bringing them behind the scenes every step of the way. The result was a new fascination with craft brewing, and beer that not only catered to people’s tastes, but challenged them as well.  That was back in 1988, and we haven’t slowed down since. By 1995, John’s beer had become so popular that he decided to open a larger brewery, along with a bottling plant to keep up with demand. Today, what was once one man’s pint-filled dream has become the Goose Island empire you know and love..', 'created_dtm': '2010-10-01 00:00:00'}
+DEBUG:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): localhost
+DEBUG:requests.packages.urllib3.connectionpool:http://localhost:5000 "POST /api/brewery HTTP/1.1" 500 37
+DEBUG:root:ENTERING JSON PIPELINE
+DEBUG:scrapy.core.scraper:Scraped from <200 https://untappd.com/gooseisland>
+None
+DEBUG:root:BREWERY IS HERE: {'id': '765', 'brewery_name': 'Lagunitas Brewing Company', 'brewery_type': 'Macro Brewery', 'description': 'From points distant and beyond we all converged on Petaluma in 1993 and ’94 with an unenunciated desire to be more than we were before. The core of Lagunitas came from Chicago, St Louis, Memphis, Walker Creek, and the highlands of Quincy.  The Chicago contingent initiated the brewing and the gravitational effect of its suchness did the rest. We all loved the beer but the mission was larger than the ordinary joy of a hoppy-sweet quaff. It was driven unseen by an urge to communicate with people, to find our diasporidic tribe, and to connect with other souls adrift on a culture that had lost its center and spun its inhabitants to the four winds to wander lost and bereft with a longing to re-enter the light. Beer, we have learned, has always been a good lubricant for social intercourse!  The Lagunitas Brewing Co. was not so much an act of ordinary ‘foundling’ as it was willed into being by the unspoken desire of supportive beer-lovers in Northern California after which they continued to nurture their creation and urged us forward to fulfill the unifying needs of that same beer-loving diaspora from coast to coast and beyond. It is good to have friends!', 'created_dtm': '2010-10-05 00:00:00'}
+DEBUG:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): localhost
+DEBUG:requests.packages.urllib3.connectionpool:http://localhost:5000 "POST /api/brewery HTTP/1.1" 500 37
+DEBUG:root:ENTERING JSON PIPELINE
+DEBUG:scrapy.core.scraper:Scraped from <200 https://untappd.com/LagunitasBrewingCo>
+None
+DEBUG:root:BREWERY IS HERE: {'id': '68', 'brewery_name': 'Ballast Point Brewing Company', 'brewery_type': 'Macro Brewery', 'description': 'Started in 1996 by a small group of home brewers in San Diego, Ballast Point Brewing Company explores new tastes and techniques to create the perfect balance of taste and aroma. From developing a proprietary yeast for our amber ale to creating a breakthrough gold medal-winning IPA, Ballast Point is dedicated to the craft of brewing beers for all to enjoy. Visit BallastPoint.com to learn more about our history and collection of beers.', 'created_dtm': '2010-10-09 00:00:00'}
+DEBUG:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): localhost
+INFO:scrapy.crawler:Received SIGINT, shutting down gracefully. Send again to force 
+DEBUG:requests.packages.urllib3.connectionpool:http://localhost:5000 "POST /api/brewery HTTP/1.1" 500 37
+DEBUG:root:ENTERING JSON PIPELINE
+DEBUG:scrapy.core.scraper:Scraped from <200 https://untappd.com/BallastPoint>
+None
+INFO:scrapy.crawler:Received SIGINT twice, forcing unclean shutdown
+DEBUG:root:BREWERY IS HERE: {'id': '2507', 'brewery_name': "Bell's Brewery", 'brewery_type': 'Regional Brewery', 'description': "Bell's Brewery, Inc. began in 1985 with a quest for better beer and a 15 gallon soup kettle. Since then, we've grown into a regional craft brewery that employs more than 500 people over an 31 state area (in addition to Washington DC and Puerto Rico). The dedication to brewing flavorful, unfiltered, quality craft beers that started in 1985 is still with us today. 100% family-owned and independent, we currently brew over 20 beers for distribution as well as many other small batch beers that are served at the Eccentric Cafe in downtown Kalamazoo.  Bell's Brewery, Inc., Comstock, Michigan", 'created_dtm': '2010-09-29 00:00:00'}
+DEBUG:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): localhost
+DEBUG:requests.packages.urllib3.connectionpool:http://localhost:5000 "POST /api/brewery HTTP/1.1" 500 37
+DEBUG:root:ENTERING JSON PIPELINE
+DEBUG:scrapy.core.scraper:Scraped from <200 https://untappd.com/bellsbrewery>
+None
+DEBUG:root:BREWERY IS HERE: {'id': '524', 'brewery_name': 'Firestone Walker Brewing Company', 'brewery_type': 'Regional Brewery', 'description': 'Firestone Walker Brewing Company started out as a small brewery in Paso Robles and Buellton in California. It was founded by Adam Firestone and David Walker in 1996. The beers from the brewery were a product of the founders’ inspiration to deliver fine quality of beers that reflects the essence of Central Coast of California Firestone Walker’s ales are carefully fermented in oak barrels. The flavors of beer crafted by Firestone Walker Brewery continue to expand in an effort to meet the expanding palates of craft beer enthusiasts within and outside of California. Firestone Walker Brewing Company has gained notoriety for its fine beers, including the ‘Mid Size Brewery of the Year’ recognition.', 'created_dtm': '2010-10-17 00:00:00'}
+DEBUG:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): localhost
+DEBUG:requests.packages.urllib3.connectionpool:http://localhost:5000 "POST /api/brewery HTTP/1.1" 500 37
+DEBUG:root:ENTERING JSON PIPELINE
+DEBUG:scrapy.core.scraper:Scraped from <200 https://untappd.com/firestonewalker>
+None
+DEBUG:root:BREWERY IS HERE: {'id': '441', 'brewery_name': 'Deschutes Brewery', 'brewery_type': 'Regional Brewery', 'description': 'Deschutes Brewery was founded in 1988 as a brew pub in Bend, Oregon. Family and employee-owned, the brewery is known for brewing a diverse line-up of award winning beers including the popular Black Butte Porter, Mirror Pond Pale Ale, and Fresh Squeezed IPA. From the beginning, the focus has been on crafting the best beer and food using only the finest ingredients. In 2008, Deschutes opened a second pub in Portland’s Pearl District. Deschutes Brewery now ships beer to 28 states, the District of Columbia, and around the world from its main brewing facility located on the banks of the Deschutes River.', 'created_dtm': '2010-10-09 00:00:00'}
+DEBUG:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): localhost
+DEBUG:requests.packages.urllib3.connectionpool:http://localhost:5000 "POST /api/brewery HTTP/1.1" 500 37
+DEBUG:root:ENTERING JSON PIPELINE
+DEBUG:scrapy.core.scraper:Scraped from <200 https://untappd.com/DeschutesBrewery>
+None
+DEBUG:root:BREWERY IS HERE: {'id': '4586', 'brewery_name': 'Southern Tier Brewing Company', 'brewery_type': 'Regional Brewery', 'description': 'About Southern Tier Brewing Company Southern Tier was founded in 2002 by Phin and Sara DeMink in Lakewood, New York. It is known for its diverse portfolio of innovative beers that embodies the spirit of American craft brewing.', 'created_dtm': '2010-09-19 00:00:00'}
+DEBUG:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): localhost
+DEBUG:requests.packages.urllib3.connectionpool:http://localhost:5000 "POST /api/brewery HTTP/1.1" 500 37
+DEBUG:root:ENTERING JSON PIPELINE
+DEBUG:scrapy.core.scraper:Scraped from <200 https://untappd.com/southerntierbrewing>
+None
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/home> from <GET https://untappd.com/>
+DEBUG:scrapy.dupefilters:Filtered duplicate request: <GET https://untappd.com/home> - no more duplicates will be shown (see DUPEFILTER_DEBUG to show all duplicates)
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/3floyds> from <GET https://untappd.com/brewery/2470>
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/AveryBrewingCo> from <GET https://untappd.com/brewery/62>
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/AnheuserBusch> from <GET https://untappd.com/brewery/44>
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/brooklynbrewery> from <GET https://untappd.com/brewery/259>
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/Guinness> from <GET https://untappd.com/brewery/49>
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/oskarblues> from <GET https://untappd.com/brewery/956>
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/rogueales> from <GET https://untappd.com/brewery/4565>
+INFO:scrapy.core.engine:Closing spider (shutdown)
+INFO:scrapy.statscollectors:Dumping Scrapy stats:
+{'downloader/request_bytes': 22098,
+ 'downloader/request_count': 29,
+ 'downloader/request_method_count/GET': 28,
+ 'downloader/request_method_count/POST': 1,
+ 'downloader/response_bytes': 175085,
+ 'downloader/response_count': 29,
+ 'downloader/response_status_count/200': 11,
+ 'downloader/response_status_count/303': 1,
+ 'downloader/response_status_count/307': 17,
+ 'dupefilter/filtered': 1,
+ 'finish_reason': 'shutdown',
+ 'finish_time': datetime.datetime(2018, 10, 29, 4, 28, 19, 968410),
+ 'item_scraped_count': 8,
+ 'log_count/DEBUG': 155,
+ 'log_count/INFO': 9,
+ 'request_depth_max': 3,
+ 'response_received_count': 11,
+ 'scheduler/dequeued': 29,
+ 'scheduler/dequeued/memory': 29,
+ 'scheduler/enqueued': 46,
+ 'scheduler/enqueued/memory': 46,
+ 'start_time': datetime.datetime(2018, 10, 29, 4, 28, 6, 398573)}
+INFO:scrapy.core.engine:Spider closed (shutdown)
+INFO:scrapy.utils.log:Scrapy 1.4.0 started (bot: Beer)
+INFO:scrapy.utils.log:Overridden settings: {'BOT_NAME': 'Beer', 'CONCURRENT_ITEMS': 2, 'CONCURRENT_REQUESTS': 8, 'NEWSPIDER_MODULE': 'Beer.spiders', 'RETRY_HTTP_CODES': [500, 503, 504, 400, 403, 404, 408, 429], 'RETRY_TIMES': 10, 'SPIDER_MODULES': ['Beer.spiders'], 'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36'}
+INFO:scrapy.middleware:Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+INFO:scrapy.middleware:Enabled downloader middlewares:
+['scrapy_proxies.RandomProxy',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'random_useragent.RandomUserAgentMiddleware',
+ 'Beer.middlewares.TooManyRequestsRetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO:scrapy.middleware:Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO:scrapy.middleware:Enabled item pipelines:
+['Beer.pipelines.HoppyAPIPipeline', 'Beer.pipelines.JsonWriterPipeline']
+INFO:scrapy.core.engine:Spider opened
+INFO:scrapy.extensions.logstats:Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+DEBUG:scrapy.extensions.telnet:Telnet console listening on 127.0.0.1:6023
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://219.91.166.214:35637>, 100 proxies left
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/login/> (referer: None)
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://213.33.155.80:44387>, 100 proxies left
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (303) to <GET https://untappd.com/home> from <POST https://untappd.com/login>
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://95.46.96.138:31964>, 100 proxies left
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/home> (referer: https://untappd.com/login/)
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://182.253.122.151:53281>, 100 proxies left
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/search?q=%22%22&type=brewery> (referer: https://untappd.com/home)
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/1204
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://181.211.129.182:58566>, 100 proxies left
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/1142
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/549
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/157
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/905
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/459
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/765
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/2898
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/68
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/2507
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://91.185.26.23:46227>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://178.128.54.106:3128>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://85.132.110.127:38735>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://80.251.190.22:8080>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://176.42.6.176:808>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://213.33.155.80:44387>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://110.235.201.6:45179>, 100 proxies left
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/441
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/4586
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/524
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/241
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/1514
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/1326
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/2813
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/3735
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/4565
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/956
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/49
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/StoneBrewing> from <GET https://untappd.com/brewery/1204>
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://181.211.129.182:58566>, 100 proxies left
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/259
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/44
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/62
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/2470
+DEBUG:root:More breweries found!
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/gooseisland> from <GET https://untappd.com/brewery/2898>
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://186.226.164.168:23500>, 100 proxies left
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/LagunitasBrewingCo> from <GET https://untappd.com/brewery/765>
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/NewBelgium> from <GET https://untappd.com/brewery/905>
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://110.232.67.50:23500>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://216.75.113.182:39602>, 100 proxies left
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/bellsbrewery> from <GET https://untappd.com/brewery/2507>
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/dogfishbeer> from <GET https://untappd.com/brewery/459>
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://50.196.95.17:48541>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://91.185.26.23:46227>, 100 proxies left
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/samadams> from <GET https://untappd.com/brewery/157>
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/BallastPoint> from <GET https://untappd.com/brewery/68>
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://188.120.232.181:8118>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://170.246.152.2:18086>, 100 proxies left
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/gooseisland> (referer: https://untappd.com/search?q=%22%22&type=brewery)
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://51.68.196.163:3128>, 100 proxies left
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/LagunitasBrewingCo> (referer: https://untappd.com/search?q=%22%22&type=brewery)
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://190.92.17.62:54674>, 100 proxies left
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/StoneBrewing> (referer: https://untappd.com/search?q=%22%22&type=brewery)
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://190.214.26.230:53281>, 100 proxies left
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/dogfishbeer> (referer: https://untappd.com/search?q=%22%22&type=brewery)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/NewBelgium> (referer: https://untappd.com/search?q=%22%22&type=brewery)
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/3floyds> from <GET https://untappd.com/brewery/2470>
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/bellsbrewery> (referer: https://untappd.com/search?q=%22%22&type=brewery)
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/> from <GET https://untappd.com/search/more_search/brewery?q=b&offset=25&sort=all>
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/BallastPoint> (referer: https://untappd.com/search?q=%22%22&type=brewery)
+DEBUG:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): localhost
+DEBUG:requests.packages.urllib3.connectionpool:http://localhost:5000 "POST /api/brewery HTTP/1.1" 500 37
+DEBUG:scrapy.core.scraper:Scraped from <200 https://untappd.com/gooseisland>
+None
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://93.171.130.189:53281>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://1.10.189.112:60406>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://1.10.187.60:61469>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://188.120.232.181:8118>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://85.202.128.207:53281>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://190.110.213.42:34841>, 100 proxies left
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/AveryBrewingCo> from <GET https://untappd.com/brewery/62>
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/samadams> (referer: https://untappd.com/search?q=%22%22&type=brewery)
+DEBUG:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): localhost
+DEBUG:requests.packages.urllib3.connectionpool:http://localhost:5000 "POST /api/brewery HTTP/1.1" 500 37
+DEBUG:scrapy.core.scraper:Scraped from <200 https://untappd.com/LagunitasBrewingCo>
+None
+DEBUG:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): localhost
+DEBUG:requests.packages.urllib3.connectionpool:http://localhost:5000 "POST /api/brewery HTTP/1.1" 500 37
+DEBUG:scrapy.core.scraper:Scraped from <200 https://untappd.com/StoneBrewing>
+None
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://178.128.54.106:3128>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://62.205.169.74:53281>, 100 proxies left
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/home> from <GET https://untappd.com/>
+DEBUG:scrapy.dupefilters:Filtered duplicate request: <GET https://untappd.com/home> - no more duplicates will be shown (see DUPEFILTER_DEBUG to show all duplicates)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/3floyds> (referer: https://untappd.com/search?q=%22%22&type=brewery)
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/AnheuserBusch> from <GET https://untappd.com/brewery/44>
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/brooklynbrewery> from <GET https://untappd.com/brewery/259>
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/Guinness> from <GET https://untappd.com/brewery/49>
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/oskarblues> from <GET https://untappd.com/brewery/956>
+DEBUG:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): localhost
+DEBUG:requests.packages.urllib3.connectionpool:http://localhost:5000 "POST /api/brewery HTTP/1.1" 500 37
+DEBUG:scrapy.core.scraper:Scraped from <200 https://untappd.com/dogfishbeer>
+None
+DEBUG:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): localhost
+DEBUG:requests.packages.urllib3.connectionpool:http://localhost:5000 "POST /api/brewery HTTP/1.1" 500 37
+DEBUG:scrapy.core.scraper:Scraped from <200 https://untappd.com/NewBelgium>
+None
+DEBUG:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): localhost
+DEBUG:requests.packages.urllib3.connectionpool:http://localhost:5000 "POST /api/brewery HTTP/1.1" 500 37
+DEBUG:scrapy.core.scraper:Scraped from <200 https://untappd.com/bellsbrewery>
+None
+DEBUG:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): localhost
+DEBUG:requests.packages.urllib3.connectionpool:http://localhost:5000 "POST /api/brewery HTTP/1.1" 500 37
+DEBUG:scrapy.core.scraper:Scraped from <200 https://untappd.com/BallastPoint>
+None
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://58.84.189.248:53281>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://110.235.201.6:45179>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://216.75.113.182:39602>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://1.10.187.60:61469>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://191.252.200.7:8080>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://191.241.33.238:39188>, 100 proxies left
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/AveryBrewingCo> (referer: https://untappd.com/search?q=%22%22&type=brewery)
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/rogueales> from <GET https://untappd.com/brewery/4565>
+DEBUG:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): localhost
+DEBUG:requests.packages.urllib3.connectionpool:http://localhost:5000 "POST /api/brewery HTTP/1.1" 500 37
+DEBUG:scrapy.core.scraper:Scraped from <200 https://untappd.com/samadams>
+None
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://103.209.140.167:58332>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://182.253.122.151:53281>, 100 proxies left
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/oskarblues> (referer: https://untappd.com/search?q=%22%22&type=brewery)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/Guinness> (referer: https://untappd.com/search?q=%22%22&type=brewery)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/brooklynbrewery> (referer: https://untappd.com/search?q=%22%22&type=brewery)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/AnheuserBusch> (referer: https://untappd.com/search?q=%22%22&type=brewery)
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/eviltwinbrewing> from <GET https://untappd.com/brewery/3735>
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/mikkellerbeer> from <GET https://untappd.com/brewery/2813>
+DEBUG:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): localhost
+DEBUG:requests.packages.urllib3.connectionpool:http://localhost:5000 "POST /api/brewery HTTP/1.1" 500 37
+DEBUG:scrapy.core.scraper:Scraped from <200 https://untappd.com/3floyds>
+None
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://216.75.113.182:39602>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://181.196.244.170:60304>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://1.20.100.145:39217>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://45.120.115.2:55854>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://58.84.189.248:53281>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://93.177.199.49:61213>, 100 proxies left
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/rogueales> (referer: https://untappd.com/search?q=%22%22&type=brewery)
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/victorybeer> from <GET https://untappd.com/brewery/1326>
+DEBUG:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): localhost
+DEBUG:requests.packages.urllib3.connectionpool:http://localhost:5000 "POST /api/brewery HTTP/1.1" 500 37
+DEBUG:scrapy.core.scraper:Scraped from <200 https://untappd.com/AveryBrewingCo>
+None
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://46.39.245.204:42488>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://58.65.163.75:46738>, 100 proxies left
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/mikkellerbeer> (referer: https://untappd.com/search?q=%22%22&type=brewery)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/eviltwinbrewing> (referer: https://untappd.com/search?q=%22%22&type=brewery)
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/boulevard> from <GET https://untappd.com/brewery/1514>
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/brewdogbrewery> from <GET https://untappd.com/brewery/241>
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/firestonewalker> from <GET https://untappd.com/brewery/524>
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/southerntierbrewing> from <GET https://untappd.com/brewery/4586>
+DEBUG:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): localhost
+DEBUG:requests.packages.urllib3.connectionpool:http://localhost:5000 "POST /api/brewery HTTP/1.1" 500 37
+DEBUG:scrapy.core.scraper:Scraped from <200 https://untappd.com/oskarblues>
+None
+DEBUG:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): localhost
+DEBUG:requests.packages.urllib3.connectionpool:http://localhost:5000 "POST /api/brewery HTTP/1.1" 500 37
+DEBUG:scrapy.core.scraper:Scraped from <200 https://untappd.com/Guinness>
+None
+DEBUG:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): localhost
+DEBUG:requests.packages.urllib3.connectionpool:http://localhost:5000 "POST /api/brewery HTTP/1.1" 500 37
+DEBUG:scrapy.core.scraper:Scraped from <200 https://untappd.com/brooklynbrewery>
+None
+DEBUG:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): localhost
+DEBUG:requests.packages.urllib3.connectionpool:http://localhost:5000 "POST /api/brewery HTTP/1.1" 500 37
+DEBUG:scrapy.core.scraper:Scraped from <200 https://untappd.com/AnheuserBusch>
+None
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://62.205.169.74:53281>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://1.179.157.114:3128>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://91.82.226.125:8080>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://5.178.255.198:50111>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://1.20.103.238:43975>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://191.37.130.191:8080>, 100 proxies left
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/victorybeer> (referer: https://untappd.com/search?q=%22%22&type=brewery)
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/DeschutesBrewery> from <GET https://untappd.com/brewery/441>
+DEBUG:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): localhost
+DEBUG:requests.packages.urllib3.connectionpool:http://localhost:5000 "POST /api/brewery HTTP/1.1" 500 37
+DEBUG:scrapy.core.scraper:Scraped from <200 https://untappd.com/rogueales>
+None
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://91.185.26.23:46227>, 100 proxies left
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/southerntierbrewing> (referer: https://untappd.com/search?q=%22%22&type=brewery)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/firestonewalker> (referer: https://untappd.com/search?q=%22%22&type=brewery)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/brewdogbrewery> (referer: https://untappd.com/search?q=%22%22&type=brewery)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/boulevard> (referer: https://untappd.com/search?q=%22%22&type=brewery)
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/foundersbrewing> from <GET https://untappd.com/brewery/549>
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/SierraNevada> from <GET https://untappd.com/brewery/1142>
+DEBUG:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): localhost
+DEBUG:requests.packages.urllib3.connectionpool:http://localhost:5000 "POST /api/brewery HTTP/1.1" 500 37
+DEBUG:scrapy.core.scraper:Scraped from <200 https://untappd.com/mikkellerbeer>
+None
+DEBUG:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): localhost
+DEBUG:requests.packages.urllib3.connectionpool:http://localhost:5000 "POST /api/brewery HTTP/1.1" 500 37
+DEBUG:scrapy.core.scraper:Scraped from <200 https://untappd.com/eviltwinbrewing>
+None
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://95.158.60.61:45981>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://167.114.167.15:8080>, 100 proxies left
+INFO:scrapy.crawler:Received SIGINT, shutting down gracefully. Send again to force 
+INFO:scrapy.crawler:Received SIGINT twice, forcing unclean shutdown
+DEBUG:scrapy.downloadermiddlewares.retry:Retrying <GET https://untappd.com/DeschutesBrewery> (failed 1 times): 429 Unknown Status
+INFO:scrapy.core.engine:Closing spider (shutdown)
+DEBUG:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): localhost
+DEBUG:requests.packages.urllib3.connectionpool:http://localhost:5000 "POST /api/brewery HTTP/1.1" 500 37
+DEBUG:scrapy.core.scraper:Scraped from <200 https://untappd.com/victorybeer>
+None
+INFO:scrapy.extensions.logstats:Crawled 25 pages (at 25 pages/min), scraped 18 items (at 18 items/min)
+INFO:scrapy.utils.log:Scrapy 1.4.0 started (bot: Beer)
+INFO:scrapy.utils.log:Overridden settings: {'BOT_NAME': 'Beer', 'CONCURRENT_REQUESTS': 8, 'NEWSPIDER_MODULE': 'Beer.spiders', 'RETRY_HTTP_CODES': [500, 503, 504, 400, 403, 404, 408, 429], 'RETRY_TIMES': 10, 'SPIDER_MODULES': ['Beer.spiders'], 'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36'}
+INFO:scrapy.middleware:Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+INFO:scrapy.middleware:Enabled downloader middlewares:
+['scrapy_proxies.RandomProxy',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'random_useragent.RandomUserAgentMiddleware',
+ 'Beer.middlewares.TooManyRequestsRetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO:scrapy.middleware:Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO:scrapy.middleware:Enabled item pipelines:
+['Beer.pipelines.HoppyAPIPipeline', 'Beer.pipelines.JsonWriterPipeline']
+INFO:scrapy.core.engine:Spider opened
+INFO:scrapy.extensions.logstats:Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+DEBUG:scrapy.extensions.telnet:Telnet console listening on 127.0.0.1:6023
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://96.250.94.52:38726>, 100 proxies left
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/login/> (referer: None)
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://110.235.201.6:45179>, 100 proxies left
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (303) to <GET https://untappd.com/home> from <POST https://untappd.com/login>
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://85.202.128.207:53281>, 100 proxies left
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/home> (referer: https://untappd.com/login/)
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://103.88.234.251:38045>, 100 proxies left
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/search?q=%22%22&type=brewery> (referer: https://untappd.com/home)
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/1204
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://187.44.5.3:59526>, 100 proxies left
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/1142
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/549
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/157
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/905
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/459
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/765
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/2898
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/68
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/2507
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/441
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/4586
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/524
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/241
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://91.82.226.125:8080>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://203.168.56.31:38512>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://128.199.65.33:8080>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://116.66.129.101:8080>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://191.37.130.191:8080>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://43.239.223.96:58118>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://213.6.150.146:43828>, 100 proxies left
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/1514
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/1326
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/2813
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/3735
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/4565
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/956
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/49
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/259
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/44
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/62
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/StoneBrewing> from <GET https://untappd.com/brewery/1204>
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://94.180.249.187:38338>, 100 proxies left
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/2470
+DEBUG:root:More breweries found!
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/southerntierbrewing> from <GET https://untappd.com/brewery/4586>
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://109.200.230.111:53281>, 100 proxies left
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/BallastPoint> from <GET https://untappd.com/brewery/68>
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/DeschutesBrewery> from <GET https://untappd.com/brewery/441>
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://176.118.54.108:41258>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://58.84.189.248:53281>, 100 proxies left
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/firestonewalker> from <GET https://untappd.com/brewery/524>
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/brewdogbrewery> from <GET https://untappd.com/brewery/241>
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://89.188.111.101:41258>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://159.65.18.117:3128>, 100 proxies left
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/bellsbrewery> from <GET https://untappd.com/brewery/2507>
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://89.188.111.101:41258>, 100 proxies left
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/gooseisland> from <GET https://untappd.com/brewery/2898>
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://185.255.46.196:44610>, 100 proxies left
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/StoneBrewing> (referer: https://untappd.com/search?q=%22%22&type=brewery)
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://187.44.5.3:59526>, 100 proxies left
+DEBUG:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): localhost
+DEBUG:requests.packages.urllib3.connectionpool:http://localhost:5000 "POST /api/brewery HTTP/1.1" 500 37
+DEBUG:scrapy.core.scraper:Scraped from <200 https://untappd.com/StoneBrewing>
+None
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/bellsbrewery> (referer: https://untappd.com/search?q=%22%22&type=brewery)
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/> from <GET https://untappd.com/search/more_search/brewery?q=b&offset=25&sort=all>
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/brewdogbrewery> (referer: https://untappd.com/search?q=%22%22&type=brewery)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/firestonewalker> (referer: https://untappd.com/search?q=%22%22&type=brewery)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/gooseisland> (referer: https://untappd.com/search?q=%22%22&type=brewery)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/DeschutesBrewery> (referer: https://untappd.com/search?q=%22%22&type=brewery)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/BallastPoint> (referer: https://untappd.com/search?q=%22%22&type=brewery)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/southerntierbrewing> (referer: https://untappd.com/search?q=%22%22&type=brewery)
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://185.255.46.196:44610>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://23.25.34.177:61908>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://191.252.200.7:8080>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://190.214.26.230:53281>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://95.46.96.138:31964>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://94.180.249.187:38338>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://178.134.52.182:32379>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://36.67.95.131:39640>, 100 proxies left
+DEBUG:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): localhost
+DEBUG:requests.packages.urllib3.connectionpool:http://localhost:5000 "POST /api/brewery HTTP/1.1" 500 37
+DEBUG:scrapy.core.scraper:Scraped from <200 https://untappd.com/bellsbrewery>
+None
+DEBUG:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): localhost
+DEBUG:requests.packages.urllib3.connectionpool:http://localhost:5000 "POST /api/brewery HTTP/1.1" 500 37
+DEBUG:scrapy.core.scraper:Scraped from <200 https://untappd.com/brewdogbrewery>
+None
+DEBUG:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): localhost
+DEBUG:requests.packages.urllib3.connectionpool:http://localhost:5000 "POST /api/brewery HTTP/1.1" 500 37
+DEBUG:scrapy.core.scraper:Scraped from <200 https://untappd.com/firestonewalker>
+None
+DEBUG:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): localhost
+DEBUG:requests.packages.urllib3.connectionpool:http://localhost:5000 "POST /api/brewery HTTP/1.1" 500 37
+DEBUG:scrapy.core.scraper:Scraped from <200 https://untappd.com/gooseisland>
+None
+DEBUG:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): localhost
+DEBUG:requests.packages.urllib3.connectionpool:http://localhost:5000 "POST /api/brewery HTTP/1.1" 500 37
+DEBUG:scrapy.core.scraper:Scraped from <200 https://untappd.com/DeschutesBrewery>
+None
+DEBUG:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): localhost
+INFO:scrapy.crawler:Received SIGINT, shutting down gracefully. Send again to force 
+ERROR:scrapy.core.scraper:Error processing {'brewery_name': 'Ballast Point Brewing Company',
+ 'brewery_type': 'Macro Brewery',
+ 'created_dtm': '2010-10-09 00:00:00',
+ 'description': 'Started in 1996 by a small group of home brewers in San '
+                'Diego, Ballast Point Brewing Company explores new tastes and '
+                'techniques to create the perfect balance of taste and aroma. '
+                'From developing a proprietary yeast for our amber ale to '
+                'creating a breakthrough gold medal-winning IPA, Ballast Point '
+                'is dedicated to the craft of brewing beers for all to enjoy. '
+                'Visit BallastPoint.com to learn more about our history and '
+                'collection of beers.',
+ 'id': '68'}
+Traceback (most recent call last):
+  File "c:\programdata\anaconda3\lib\site-packages\requests\packages\urllib3\connection.py", line 141, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "c:\programdata\anaconda3\lib\site-packages\requests\packages\urllib3\util\connection.py", line 83, in create_connection
+    raise err
+  File "c:\programdata\anaconda3\lib\site-packages\requests\packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\programdata\anaconda3\lib\site-packages\requests\packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "c:\programdata\anaconda3\lib\site-packages\requests\packages\urllib3\connectionpool.py", line 356, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "c:\programdata\anaconda3\lib\http\client.py", line 1239, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "c:\programdata\anaconda3\lib\http\client.py", line 1285, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "c:\programdata\anaconda3\lib\http\client.py", line 1234, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "c:\programdata\anaconda3\lib\http\client.py", line 1026, in _send_output
+    self.send(msg)
+  File "c:\programdata\anaconda3\lib\http\client.py", line 964, in send
+    self.connect()
+  File "c:\programdata\anaconda3\lib\site-packages\requests\packages\urllib3\connection.py", line 166, in connect
+    conn = self._new_conn()
+  File "c:\programdata\anaconda3\lib\site-packages\requests\packages\urllib3\connection.py", line 150, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+requests.packages.urllib3.exceptions.NewConnectionError: <requests.packages.urllib3.connection.HTTPConnection object at 0x000002782C75D400>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\programdata\anaconda3\lib\site-packages\requests\adapters.py", line 438, in send
+    timeout=timeout
+  File "c:\programdata\anaconda3\lib\site-packages\requests\packages\urllib3\connectionpool.py", line 649, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "c:\programdata\anaconda3\lib\site-packages\requests\packages\urllib3\util\retry.py", line 388, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+requests.packages.urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /api/brewery (Caused by NewConnectionError('<requests.packages.urllib3.connection.HTTPConnection object at 0x000002782C75D400>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\programdata\anaconda3\lib\site-packages\twisted\internet\defer.py", line 653, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "C:\hoppy\hoppy-backend\hoppy\scrapy\beer\Beer\pipelines.py", line 49, in process_item
+    r = requests.post(self.urls['brewery'], data=json_data)
+  File "c:\programdata\anaconda3\lib\site-packages\requests\api.py", line 112, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "c:\programdata\anaconda3\lib\site-packages\requests\api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "c:\programdata\anaconda3\lib\site-packages\requests\sessions.py", line 518, in request
+    resp = self.send(prep, **send_kwargs)
+  File "c:\programdata\anaconda3\lib\site-packages\requests\sessions.py", line 639, in send
+    r = adapter.send(request, **kwargs)
+  File "c:\programdata\anaconda3\lib\site-packages\requests\adapters.py", line 502, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /api/brewery (Caused by NewConnectionError('<requests.packages.urllib3.connection.HTTPConnection object at 0x000002782C75D400>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it',))
+DEBUG:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): localhost
+INFO:scrapy.crawler:Received SIGINT twice, forcing unclean shutdown
+ERROR:scrapy.core.scraper:Error processing {'brewery_name': 'Southern Tier Brewing Company',
+ 'brewery_type': 'Regional Brewery',
+ 'created_dtm': '2010-09-19 00:00:00',
+ 'description': 'About Southern Tier Brewing Company Southern Tier was founded '
+                'in 2002 by Phin and Sara DeMink in Lakewood, New York. It is '
+                'known for its diverse portfolio of innovative beers that '
+                'embodies the spirit of American craft brewing.',
+ 'id': '4586'}
+Traceback (most recent call last):
+  File "c:\programdata\anaconda3\lib\site-packages\requests\packages\urllib3\connection.py", line 141, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "c:\programdata\anaconda3\lib\site-packages\requests\packages\urllib3\util\connection.py", line 83, in create_connection
+    raise err
+  File "c:\programdata\anaconda3\lib\site-packages\requests\packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\programdata\anaconda3\lib\site-packages\requests\packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "c:\programdata\anaconda3\lib\site-packages\requests\packages\urllib3\connectionpool.py", line 356, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "c:\programdata\anaconda3\lib\http\client.py", line 1239, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "c:\programdata\anaconda3\lib\http\client.py", line 1285, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "c:\programdata\anaconda3\lib\http\client.py", line 1234, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "c:\programdata\anaconda3\lib\http\client.py", line 1026, in _send_output
+    self.send(msg)
+  File "c:\programdata\anaconda3\lib\http\client.py", line 964, in send
+    self.connect()
+  File "c:\programdata\anaconda3\lib\site-packages\requests\packages\urllib3\connection.py", line 166, in connect
+    conn = self._new_conn()
+  File "c:\programdata\anaconda3\lib\site-packages\requests\packages\urllib3\connection.py", line 150, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+requests.packages.urllib3.exceptions.NewConnectionError: <requests.packages.urllib3.connection.HTTPConnection object at 0x000002782C940A90>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\programdata\anaconda3\lib\site-packages\requests\adapters.py", line 438, in send
+    timeout=timeout
+  File "c:\programdata\anaconda3\lib\site-packages\requests\packages\urllib3\connectionpool.py", line 649, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "c:\programdata\anaconda3\lib\site-packages\requests\packages\urllib3\util\retry.py", line 388, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+requests.packages.urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /api/brewery (Caused by NewConnectionError('<requests.packages.urllib3.connection.HTTPConnection object at 0x000002782C940A90>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\programdata\anaconda3\lib\site-packages\twisted\internet\defer.py", line 653, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "C:\hoppy\hoppy-backend\hoppy\scrapy\beer\Beer\pipelines.py", line 49, in process_item
+    r = requests.post(self.urls['brewery'], data=json_data)
+  File "c:\programdata\anaconda3\lib\site-packages\requests\api.py", line 112, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "c:\programdata\anaconda3\lib\site-packages\requests\api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "c:\programdata\anaconda3\lib\site-packages\requests\sessions.py", line 518, in request
+    resp = self.send(prep, **send_kwargs)
+  File "c:\programdata\anaconda3\lib\site-packages\requests\sessions.py", line 639, in send
+    r = adapter.send(request, **kwargs)
+  File "c:\programdata\anaconda3\lib\site-packages\requests\adapters.py", line 502, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /api/brewery (Caused by NewConnectionError('<requests.packages.urllib3.connection.HTTPConnection object at 0x000002782C940A90>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it',))
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/home> from <GET https://untappd.com/>
+DEBUG:scrapy.dupefilters:Filtered duplicate request: <GET https://untappd.com/home> - no more duplicates will be shown (see DUPEFILTER_DEBUG to show all duplicates)
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/3floyds> from <GET https://untappd.com/brewery/2470>
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/AveryBrewingCo> from <GET https://untappd.com/brewery/62>
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/AnheuserBusch> from <GET https://untappd.com/brewery/44>
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/brooklynbrewery> from <GET https://untappd.com/brewery/259>
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/Guinness> from <GET https://untappd.com/brewery/49>
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/oskarblues> from <GET https://untappd.com/brewery/956>
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/rogueales> from <GET https://untappd.com/brewery/4565>
+INFO:scrapy.core.engine:Closing spider (shutdown)
+INFO:scrapy.statscollectors:Dumping Scrapy stats:
+{'downloader/request_bytes': 22314,
+ 'downloader/request_count': 29,
+ 'downloader/request_method_count/GET': 28,
+ 'downloader/request_method_count/POST': 1,
+ 'downloader/response_bytes': 174534,
+ 'downloader/response_count': 29,
+ 'downloader/response_status_count/200': 11,
+ 'downloader/response_status_count/303': 1,
+ 'downloader/response_status_count/307': 17,
+ 'dupefilter/filtered': 1,
+ 'finish_reason': 'shutdown',
+ 'finish_time': datetime.datetime(2018, 10, 29, 4, 32, 32, 583377),
+ 'item_scraped_count': 6,
+ 'log_count/DEBUG': 135,
+ 'log_count/ERROR': 2,
+ 'log_count/INFO': 9,
+ 'request_depth_max': 3,
+ 'response_received_count': 11,
+ 'scheduler/dequeued': 29,
+ 'scheduler/dequeued/memory': 29,
+ 'scheduler/enqueued': 46,
+ 'scheduler/enqueued/memory': 46,
+ 'start_time': datetime.datetime(2018, 10, 29, 4, 32, 16, 812567)}
+INFO:scrapy.core.engine:Spider closed (shutdown)
+INFO:scrapy.utils.log:Scrapy 1.4.0 started (bot: Beer)
+INFO:scrapy.utils.log:Overridden settings: {'BOT_NAME': 'Beer', 'CONCURRENT_REQUESTS': 8, 'NEWSPIDER_MODULE': 'Beer.spiders', 'RETRY_HTTP_CODES': [500, 503, 504, 400, 403, 404, 408, 429], 'RETRY_TIMES': 10, 'SPIDER_MODULES': ['Beer.spiders'], 'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36'}
+INFO:scrapy.middleware:Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+INFO:scrapy.middleware:Enabled downloader middlewares:
+['scrapy_proxies.RandomProxy',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'random_useragent.RandomUserAgentMiddleware',
+ 'Beer.middlewares.TooManyRequestsRetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO:scrapy.middleware:Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO:scrapy.middleware:Enabled item pipelines:
+['Beer.pipelines.JsonWriterPipeline']
+INFO:scrapy.core.engine:Spider opened
+INFO:scrapy.extensions.logstats:Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+DEBUG:scrapy.extensions.telnet:Telnet console listening on 127.0.0.1:6023
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://190.181.135.98:48458>, 100 proxies left
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/login/> (referer: None)
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://213.33.155.80:44387>, 100 proxies left
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (303) to <GET https://untappd.com/home> from <POST https://untappd.com/login>
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://46.149.35.213:50805>, 100 proxies left
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/home> (referer: https://untappd.com/login/)
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://176.42.6.176:808>, 100 proxies left
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/search?q=%22%22&type=brewery> (referer: https://untappd.com/home)
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/1204
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://187.44.5.3:59526>, 100 proxies left
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/1142
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/549
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/157
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/905
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/459
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://178.128.54.106:3128>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://178.134.52.182:32379>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://93.177.199.49:61213>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://95.80.200.22:54088>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://185.136.151.20:39417>, 100 proxies left
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/765
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/2898
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/68
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/2507
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/441
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/4586
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/524
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/241
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/StoneBrewing> from <GET https://untappd.com/brewery/1204>
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://1.10.189.112:60406>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://1.10.187.60:61469>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://94.180.249.187:38338>, 100 proxies left
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/1514
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/1326
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/2813
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/3735
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/4565
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/956
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/49
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/259
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/44
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/62
+DEBUG:root:Attempting to parse Brewery from URL: https://untappd.com/brewery/2470
+DEBUG:root:More breweries found!
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/samadams> from <GET https://untappd.com/brewery/157>
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://191.241.33.238:39188>, 100 proxies left
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/brewdogbrewery> from <GET https://untappd.com/brewery/241>
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/NewBelgium> from <GET https://untappd.com/brewery/905>
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/firestonewalker> from <GET https://untappd.com/brewery/524>
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/dogfishbeer> from <GET https://untappd.com/brewery/459>
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://167.114.167.15:8080>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://95.158.60.61:45981>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://190.110.213.42:34841>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://94.180.249.187:38338>, 100 proxies left
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/SierraNevada> from <GET https://untappd.com/brewery/1142>
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://185.184.174.171:55222>, 100 proxies left
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/foundersbrewing> from <GET https://untappd.com/brewery/549>
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://200.16.126.222:8080>, 100 proxies left
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/samadams> (referer: https://untappd.com/search?q=%22%22&type=brewery)
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://110.172.168.171:53281>, 100 proxies left
+DEBUG:scrapy.core.scraper:Scraped from <200 https://untappd.com/samadams>
+{'brewery_name': 'Boston Beer Company',
+ 'brewery_type': 'Regional Brewery',
+ 'created_dtm': '2010-09-18 00:00:00',
+ 'description': 'Jim Koch founded the Boston Beer Company back in 1984 after '
+                'brewing the first batch of Samuel Adams Boston Lager in his '
+                'kitchen. It was his mission to reshape the way American beer '
+                'drinkers thought of American beer.   Just six weeks after '
+                'introducing Samuel Adams Boston Lager to the public, it '
+                'brought home the Best Beer in America honors at the Great '
+                'American Beer Festival in Denver. An honor it went on to win '
+                '3 more times before that particular award was discontinued.  '
+                'Today, Samuel Adams makes more than 21 styles of award '
+                'winning beer and is recognized around the globe as a hot '
+                'house of new beer ideas.  If you share our passion, join us '
+                'here as a fan!   Cheers!  The Boston Beer Company, Boston MA',
+ 'id': '157'}
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/> from <GET https://untappd.com/search/more_search/brewery?q=b&offset=25&sort=all>
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/NewBelgium> (referer: https://untappd.com/search?q=%22%22&type=brewery)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/brewdogbrewery> (referer: https://untappd.com/search?q=%22%22&type=brewery)
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://182.53.206.159:47895>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://58.84.189.248:53281>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://45.120.115.2:55854>, 100 proxies left
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/dogfishbeer> (referer: https://untappd.com/search?q=%22%22&type=brewery)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/firestonewalker> (referer: https://untappd.com/search?q=%22%22&type=brewery)
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/StoneBrewing> (referer: https://untappd.com/search?q=%22%22&type=brewery)
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://190.181.135.98:48458>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://46.149.35.213:50805>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://203.168.56.31:38512>, 100 proxies left
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/AveryBrewingCo> from <GET https://untappd.com/brewery/62>
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://182.253.153.47:53281>, 100 proxies left
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/home> from <GET https://untappd.com/>
+DEBUG:scrapy.dupefilters:Filtered duplicate request: <GET https://untappd.com/home> - no more duplicates will be shown (see DUPEFILTER_DEBUG to show all duplicates)
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/3floyds> from <GET https://untappd.com/brewery/2470>
+DEBUG:scrapy.core.scraper:Scraped from <200 https://untappd.com/NewBelgium>
+{'brewery_name': 'New Belgium Brewing Company',
+ 'brewery_type': 'Regional Brewery',
+ 'created_dtm': '2010-09-20 00:00:00',
+ 'description': 'New Belgium Brewing Company, a 100% employee-owned brewery '
+                'and maker of Fat Tire Belgian Style Ale, La Folie, Voodoo '
+                'Ranger IPA, 1554 and other Belgian-inspired beers, began '
+                'operations in a tiny Fort Collins basement in 1991. Today, '
+                'the fourth-largest craft brewer in the U.S., New Belgium '
+                'produces year-round beers including: Fat Tire Belgian Style '
+                'Ale, Fat Tire Belgian White, Voodoo Ranger IPA family, '
+                'Citradelic Tangerine IPA, Tartastic, 1554, Trippel, Abbey, '
+                'and Bohemian Pilsener, as well as a host of seasonal releases '
+                'and special releases that includes sour beer favorites La '
+                'Folie, Le Terroir and Transatlantique Kriek. In addition to '
+                'producing world-class beers, New Belgium takes pride in being '
+                'a responsible corporate role model with progressive programs '
+                'such as 100% employee ownership, open book management and a '
+                'commitment to environmental stewardship.',
+ 'id': '905'}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://untappd.com/brewdogbrewery>
+{'brewery_name': 'BrewDog',
+ 'brewery_type': 'Micro Brewery',
+ 'created_dtm': '2010-10-04 00:00:00',
+ 'description': 'MARTIN AND I (JAMES) WERE BORED OF THE INDUSTRIALLY BREWED '
+                'LAGERS AND STUFFY ALES THAT DOMINATED THE UK BEER MARKET.  We '
+                'decided the best way to fix this undesirable predicament was '
+                'to brew our own. Consequently in April 2007 BrewDog was '
+                'born.  Both only 24 at the time, we leased a building in '
+                'Fraserburgh, got some scary bank loans, spent all our money '
+                'on stainless steel and started making some hardcore craft '
+                'beers.  We brewed tiny batches, filled bottles by hand and '
+                'sold our beers at local markets and out of the back of our '
+                'beat up old van.  Our biggest mission when we set up BrewDog '
+                'was to make other people as passionate about great craft beer '
+                'as we are. And that is still our biggest mission today.',
+ 'id': '241'}
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://47.52.232.230:3128>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://176.118.54.108:41258>, 100 proxies left
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/AnheuserBusch> from <GET https://untappd.com/brewery/44>
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/foundersbrewing> (referer: https://untappd.com/search?q=%22%22&type=brewery)
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/brooklynbrewery> from <GET https://untappd.com/brewery/259>
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/SierraNevada> (referer: https://untappd.com/search?q=%22%22&type=brewery)
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/Guinness> from <GET https://untappd.com/brewery/49>
+DEBUG:scrapy.core.scraper:Scraped from <200 https://untappd.com/dogfishbeer>
+{'brewery_name': 'Dogfish Head Craft Brewery',
+ 'brewery_type': 'Regional Brewery',
+ 'created_dtm': '2010-09-18 00:00:00',
+ 'description': 'Dogfish Head started in June 1995 when Dogfish Head Brewings '
+                '& Eats was established in the beach community of Rehoboth '
+                'Beach, Delaware. Dogfish Head was the first brewpub of the '
+                'state. The original plan to deliver great music, delicious '
+                'food and fine beers to the community came to life when the '
+                'first batch of Shelter Pale Ale beers were started. Soon, '
+                'Dogfish Head engaged in brewing 12 gallons of beer batches to '
+                'supply the restaurant’s need. Dogfish Head brewery quickly '
+                'achieved popularity beyond the state and reaches to nearby '
+                'areas like Philadelphia and Washington D.C. By 2000, Dogfish '
+                'Head is selling over 20 types of beers in 30 states.',
+ 'id': '459'}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://untappd.com/firestonewalker>
+{'brewery_name': 'Firestone Walker Brewing Company',
+ 'brewery_type': 'Regional Brewery',
+ 'created_dtm': '2010-10-17 00:00:00',
+ 'description': 'Firestone Walker Brewing Company started out as a small '
+                'brewery in Paso Robles and Buellton in California. It was '
+                'founded by Adam Firestone and David Walker in 1996. The beers '
+                'from the brewery were a product of the founders’ inspiration '
+                'to deliver fine quality of beers that reflects the essence of '
+                'Central Coast of California Firestone Walker’s ales are '
+                'carefully fermented in oak barrels. The flavors of beer '
+                'crafted by Firestone Walker Brewery continue to expand in an '
+                'effort to meet the expanding palates of craft beer '
+                'enthusiasts within and outside of California. Firestone '
+                'Walker Brewing Company has gained notoriety for its fine '
+                'beers, including the ‘Mid Size Brewery of the Year’ '
+                'recognition.',
+ 'id': '524'}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://untappd.com/StoneBrewing>
+{'brewery_name': 'Stone Brewing',
+ 'brewery_type': 'Regional Brewery',
+ 'created_dtm': '2010-09-29 00:00:00',
+ 'description': 'Founded by Greg Koch and Steve Wagner in 1996, San '
+                'Diego-based Stone Brewing is the 9th largest craft brewer in '
+                'the United States. Stone has been listed on the Inc. 500 | '
+                '5000 Fastest Growing Private Companies list 11 times, and has '
+                'been called the “All-time Top Brewery on Planet Earth” by '
+                'BeerAdvocate magazine twice.   The multifaceted company will '
+                'be the first American craft brewer to independently build, '
+                'own and operate a brewery in Europe, and is also building a '
+                'production brewery and destination restaurant in Richmond, '
+                'Virginia. Brewing at both locations is anticipated to begin '
+                'in spring 2016. Known for its bold, flavorful and largely '
+                'hop-centric beers, Stone has earned a reputation for brewing '
+                'outstanding, unique beers while maintaining an unwavering '
+                'commitment to sustainability, business ethics, philanthropy '
+                'and the art of brewing.',
+ 'id': '1204'}
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://78.139.243.219:51911>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://191.37.130.191:8080>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://110.172.168.171:53281>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://213.6.150.146:43828>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://23.25.34.177:61908>, 100 proxies left
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/oskarblues> from <GET https://untappd.com/brewery/956>
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/AveryBrewingCo> (referer: https://untappd.com/search?q=%22%22&type=brewery)
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://96.91.251.185:33678>, 100 proxies left
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://36.85.176.92:80>, 100 proxies left
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://untappd.com/3floyds> (referer: https://untappd.com/search?q=%22%22&type=brewery)
+DEBUG:scrapy.core.scraper:Scraped from <200 https://untappd.com/foundersbrewing>
+{'brewery_name': 'Founders Brewing Co.',
+ 'brewery_type': 'Regional Brewery',
+ 'created_dtm': '2010-10-09 00:00:00',
+ 'description': 'We don’t brew beer for the masses. Instead, our beers are '
+                'crafted for a chosen few, a small cadre of renegades and '
+                'rebels who enjoy a beer that pushes the limits of what is '
+                'commonly accepted as taste. In short, we make beer for people '
+                'like us. Founders. Brewed for us.',
+ 'id': '549'}
+DEBUG:scrapy.core.scraper:Scraped from <200 https://untappd.com/SierraNevada>
+{'brewery_name': 'Sierra Nevada Brewing Co.',
+ 'brewery_type': 'Regional Brewery',
+ 'created_dtm': '2010-10-02 00:00:00',
+ 'description': 'In 1980, Ken Grossman built a small brewery in the city of '
+                'Chico, California. To this day, premium ingredients and '
+                'time-honored brewing techniques make Sierra Nevada ales and '
+                'lagers truly exceptional beers.',
+ 'id': '1142'}
+DEBUG:scrapy.proxies:Proxy user pass not found
+DEBUG:scrapy.proxies:Using proxy <https://178.134.52.182:32379>, 100 proxies left
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (307) to <GET https://untappd.com/rogueales> from <GET https://untappd.com/brewery/4565>
+INFO:scrapy.crawler:Received SIGINT, shutting down gracefully. Send again to force 
+INFO:scrapy.crawler:Received SIGINT twice, forcing unclean shutdown
+DEBUG:scrapy.downloadermiddlewares.retry:Retrying <GET https://untappd.com/oskarblues> (failed 1 times): 429 Unknown Status

@@ -64,14 +64,14 @@ class UntappdSpider(Spider):
             date_raw = date.text.strip()
             date_stripped = date_raw.replace('Added','').strip()
             date_parsed = parser.parse(date_stripped)
-            brewery_item['created_dtm'] = date_parsed.strftime('%Y-%m-%d')  
-        beers_soup = soup.find('p', {'class':'count'})
+            brewery_item['created_dtm'] = date_parsed.strftime('%Y-%m-%d %H:%M:%S')  
+        # beers_soup = soup.find('p', {'class':'count'})
         # brewery_locations_soup = soup.find(text='Brewery Locations')
         # if brewery_locations_soup:
         #     yield self.parse_brewery_locations(soup=brewery_locations_soup, meta={'brewery':brewery_item})
-        if beers_soup:
-            yield Request(self.domain + beers_soup.a['href'], callback=self.parse_beer, 
-                          meta={'brewery':brewery_item})
+        # if beers_soup:
+        #     yield Request(self.domain + beers_soup.a['href'], callback=self.parse_beer, 
+        #                   meta={'brewery':brewery_item})
         yield brewery_item
 
     def parse_brewery_locations(self, response, soup):
@@ -85,13 +85,7 @@ class UntappdSpider(Spider):
             brewery_location_item['brewery_id'] = brewery_item['id']
             location = location.find_next('div', {'class':'item'})
                      
-    def parse_beer(self, response):
-        #Styles
-        try:
-            beer_types = pandas.read_csv('BEER_TYPES.csv')
-            unique_types = list(set(beer_types.name))
-        except:
-            unique_types = []
+    def parse_beer(self, response):        
         try:
             brewery_item = response.meta['brewery']
         except:
@@ -112,14 +106,12 @@ class UntappdSpider(Spider):
             style = beer_soup.find('p', {'class':'style'})
             if style:
                 beer_item['beer_type'] = style.text.strip()
-                if beer_item['beer_type'] not in unique_types:
-                    unique_types.append(beer_item['beer_type'])
             date = beer_soup.find('p', {'class':'date'})
             if date:          
                 date_raw = date.text.strip()
                 date_stripped = date_raw.replace('Added','').strip()
                 date_parsed = parser.parse(date_stripped)
-                beer_item['created_dtm'] = date_parsed.strftime('%Y-%m-%d')  
+                beer_item['created_dtm'] = date_parsed.strftime('%Y-%m-%d %H:%M:%S')  
             details = beer_soup.find('div', {'class':'details'})
             if details:
                 abv = details.find('p', {'class':'abv'})
@@ -131,7 +123,6 @@ class UntappdSpider(Spider):
             description = beer_soup.select('p[class*="desc-full"]')[0]
             if description:
                 beer_item['description'] = description.text.replace('Show Less', '').replace('Read Less', '').replace('"','').strip()
-            beer_types = pandas.DataFrame(unique_styles, columns=['name'])
             beer_types.to_csv('BEER_TYPES.csv', index=False)
             yield beer_item
         

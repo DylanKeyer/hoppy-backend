@@ -1,21 +1,6 @@
-from passlib.apps import custom_app_context as pwd_context
-
-from ..main import db
+# from passlib.apps import custom_app_context as pwd_context
+from hoppy import db
 from .enums import BeerType, BreweryType, SocialMediaType, ServingType
-
-class Beer(db.Model):
-    __tablename__ = 'beer'
-    '''Constraints'''
-    id = db.Column(db.Integer, primary_key=True)
-    brewery_id = db.Column(db.Integer, db.ForeignKey("brewery.id"), nullable=False)
-    '''Non-constraint columns'''
-    beer_type = db.Column(db.Enum(BeerType))
-    beer_name = db.Column(db.String(32), nullable=False)
-    description = db.Column(db.Text)
-    abv = db.Column(db.Float)
-    ibu = db.Column(db.Integer)
-    created_dtm = db.Column(db.DateTime)
-    updated_dtm = db.Column(db.DateTime)
 
 class Brewery(db.Model):
     __tablename__ = 'brewery'
@@ -25,6 +10,21 @@ class Brewery(db.Model):
     brewery_type = db.Column(db.Enum(BreweryType), nullable=False)
     brewery_name = db.Column(db.String(32), nullable=False)
     description = db.Column(db.Text)
+    created_dtm = db.Column(db.DateTime)
+    updated_dtm = db.Column(db.DateTime)
+
+class Beer(db.Model):
+    __tablename__ = 'beer'
+    '''Constraints'''
+    id = db.Column(db.Integer, primary_key=True)
+    brewery_id = db.Column(db.Integer, db.ForeignKey("brewery.id"), nullable=False)
+    brewery = db.relationship("Brewery", foreign_keys=brewery_id)
+    '''Non-constraint columns'''
+    beer_type = db.Column(db.Enum(BeerType))
+    beer_name = db.Column(db.String(32), nullable=False)
+    description = db.Column(db.Text)
+    abv = db.Column(db.Float)
+    ibu = db.Column(db.Integer)
     created_dtm = db.Column(db.DateTime)
     updated_dtm = db.Column(db.DateTime)
 

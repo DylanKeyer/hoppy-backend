@@ -1,8 +1,34 @@
 from Beer.items import Beer, Brewery, Review, User, Venue
+# from ...hoppy import db
+# from ...hoppy.entities.schemas import BeerSchema, BrewerySchema
+# from ...hoppy.entities.models import Beer, Brewery
 import MySQLdb
 import json
 import requests
 import logging
+
+class JsonWriterPipeline(object):
+    def open_spider(self, spider):
+        self.file = open('items.json', 'w+')
+
+    def close_spider(self, spider):
+        self.file.close()
+
+    def process_item(self, item, spider):
+        dictionary = dict(item)
+        line = json.dumps(dictionary) + "\n"
+        self.file.write(line)
+        return item
+
+class PostgreSQLPipeline(object):
+    def __init__(self):
+        pass
+    
+    # def process_item(self, item, spider):
+    #     if isinstance(item, Beer):
+    #         r = requests.post(self.urls['beer'], data=json_data)
+    #     elif isinstance(item, Brewery):
+    #         r = requests.post(self.urls['brewery'], data=json_data)
 
 class HoppyAPIPipeline(object):
     def __init__(self):
@@ -15,11 +41,11 @@ class HoppyAPIPipeline(object):
 
     def process_item(self, item, spider):
         json_data = json.dumps(dict(item))
-        logging.debug("Attempting to add item: " + str(json_data))
         if isinstance(item, Beer):
             r = requests.post(self.urls['beer'], data=json_data)
         elif isinstance(item, Brewery):
             r = requests.post(self.urls['brewery'], data=json_data)
+        return item
 
 class MySQLPipeline(object):
     def __init__(self):
