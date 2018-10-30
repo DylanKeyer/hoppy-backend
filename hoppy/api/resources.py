@@ -1,35 +1,19 @@
 from flask import request
 from flask_restful import Resource
 import logging
+from marshmallow_enum import EnumField
 
 from hoppy import app, db
-from ..entities.models import Beer, Brewery
-from ..entities.schemas import BeerSchema, BrewerySchema
+from ..entities.models import Beer, Brewery, Venue, User, Review, BreweryVenue
+from ..entities.schemas import BeerSchema, BrewerySchema, VenueSchema, UserSchema, ReviewSchema, BreweryVenueSchema
+
+#initialize schemas
 beer_schema = BeerSchema(strict=True)
 beers_schema = BeerSchema(many=True)
 brewery_schema = BrewerySchema(strict=True)
 breweries_schema = BrewerySchema(many=True)
-# @app.route('/api/beers/', methods=['GET','POST'])
-# def beers():
-#     if request.method == 'POST':
-#         posted_beer = beer_schema.load(request.get_json())
-#         db.session.add(posted_beer.data)
-#         db.session.commit()
-#         return 'Success'
-#     else:       
-#         all_beers = Beer.query.all()
-#         return beer_schema.jsonify(all_beers)
-
-# @app.route('/api/beers/<id>')
-# def beer_detail(id):
-#     if request.method == 'POST':
-#         posted_beer = beer_schema.load(request.get_json())
-#         beer = Beer(**posted_beer.data)
-#         db.session.add(beer)
-#         db.session.commit()
-#     elif request.method == 'GET':
-#         beer = Beer.query.filter_by(id=id).first()
-#         return beer_schema.jsonify(beer)
+brewery_venue_schema = BrewerySchema(strict=True)
+brewery_venues_schema = BrewerySchema(many=True)
 
 class BeerResource(Resource):
     def get(self, id=None):
@@ -43,10 +27,8 @@ class BeerResource(Resource):
             return beer_schema.jsonify(beer_objects)
     
     def post(self):
-        print(request.get_json(force=True))
-        posted_beer = request.get_json()
-        print(beer_schema.dump(posted_beer).data)
-        beer = Beer(**beer_schema.dump(posted_beer).data)
+        posted_beer = request.get_json(force=True)
+        beer, errors = beer_schema.load(posted_beer)
         db.session.add(beer)
         db.session.commit()
         return "Success"
@@ -63,8 +45,23 @@ class BreweryResource(Resource):
     def post(self):
         # serialize posted JSON to a marshmallow schema object
         posted_brewery = request.get_json(force=True)
-        brewery,errors = brewery_schema.load(posted_brewery)
+        brewery, errors = brewery_schema.load(posted_brewery)
         db.session.add(brewery)
         db.session.commit()
-        
+        return "Success"
+
+class BreweryVenueResource(Resource):
+    def get(self, brewery_id=None):
+        if id is None:
+            return 'Must supply Brewery ID'
+        else:
+            brewery_venue_objects = db.session.query(BreweryVenue).filter_by(brewery_id=brewery_id)        
+            return brewery_venues_schema.jsonify(brewery_venue_objects)
+
+    def post(self):
+        # serialize posted JSON to a marshmallow schema object
+        posted_brewery_venue = request.get_json(force=True)
+        brewery_venue, errors = brewery_venue.load(posted_brewery_venue)
+        db.session.add(brewery_venue)
+        db.session.commit()
         return "Success"

@@ -8,7 +8,7 @@ import logging
 import re
 import pandas
 
-from Beer.items import Beer, Brewery, Review, Venue, User
+from Beer.items import Beer, Brewery, Review, Venue, User, BreweryVenue
 
 logging.basicConfig(filename='untappd.log', level=logging.DEBUG)
 
@@ -22,6 +22,10 @@ class UntappdSpider(Spider):
         self.search_url = self.domain + '/search'
         self.offset = 0
         self.brewery_beer_counter = {}
+
+        self.beer_types = []
+        self.brewery_types = []
+        self.venue_types = []
 
     def parse(self, response):
         return FormRequest.from_response(
@@ -65,31 +69,38 @@ class UntappdSpider(Spider):
             date_stripped = date_raw.replace('Added','').strip()
             date_parsed = parser.parse(date_stripped)
             brewery_item['created_dtm'] = date_parsed.strftime('%Y-%m-%d %H:%M:%S')  
-        # beers_soup = soup.find('p', {'class':'count'})
-        # brewery_locations_soup = soup.find(text='Brewery Locations')
-        # if brewery_locations_soup:
-        #     yield self.parse_brewery_locations(soup=brewery_locations_soup, meta={'brewery':brewery_item})
-        # if beers_soup:
-        #     yield Request(self.domain + beers_soup.a['href'], callback=self.parse_beer, 
-        #                   meta={'brewery':brewery_item})
+        beers_soup = soup.find('p', {'class':'count'})
+        brewery_venues_soup = soup.find(text='Brewery Locations')
+        if brewery_venues_soup:
+            yield self.parse_brewery_venues(soup=brewery_venues_soup, brewery_item=brewery_item)
+        if beers_soup:
+            yield Request(self.domain + beers_soup.a['href'], callback=self.parse_beer, 
+                          meta={'brewery':brewery_item})
         yield brewery_item
 
-    def parse_brewery_locations(self, response, soup):
-        try:
-            brewery_item = response.meta['brewery']
-        except:
-            pass
+    def parse_brewery_venues(self, soup, brewery_item):
+        brewery_venue_items = []
         location = soup
         while True:
-            brewery_location_item = BreweryLocation()
-            brewery_location_item['brewery_id'] = brewery_item['id']
+            brewery_venue_item = BreweryVenue()
+            brewery_venue_item['brewery_id'] = brewery_item['id']
             location = location.find_next('div', {'class':'item'})
+            if not location or 'venue' not in location.find('a', {'class':'track-click'})['data-href']:
+                break
+            brewery_venue_item['venue_id'] = location.find('p', {'class':'text'}).a['href'].split('/')[-1]
+            
+            brewery_items.append(brewery_venue_item)
+
+            if location and location.next_sibling:
+                continue
+            else:
+                break
+
+        for item in brewery_venue_items:
+            yield item
                      
     def parse_beer(self, response):        
-        try:
-            brewery_item = response.meta['brewery']
-        except:
-            pass
+        brewery_item = response.meta['brewery']
         brewery_id = brewery_item['id']
         soup = BeautifulSoup(response.body.decode('utf-8'), 'lxml')
         beers_soup = soup.findAll('div', {'class':'beer-item'})
@@ -123,16 +134,17 @@ class UntappdSpider(Spider):
             description = beer_soup.select('p[class*="desc-full"]')[0]
             if description:
                 beer_item['description'] = description.text.replace('Show Less', '').replace('Read Less', '').replace('"','').strip()
-            beer_types.to_csv('BEER_TYPES.csv', index=False)
             yield beer_item
         
         more_beers = soup.find(text="Show More")
-        if more_beers:            
-            yield Request('https://untappd.com/brewery/more_beer/{}/{}?sort=most_popular'.format(
-                    brewery_id,
-                    str(self.brewery_beer_counter[brewery_id])),
-                callback = self.parse_beers_from_brewery
-                )
+        if more_beers:   
+            if self.brewery_beer_counter[brewery_id] < 10:         
+                yield Request('https://untappd.com/brewery/more_beer/{}/{}?sort=most_popular'.format(
+                        brewery_id,
+                        str(self.brewery_beer_counter[brewery_id])),
+                    callback = self.parse_beers_from_brewery,
+                    meta = {'brewery': brewery_item}
+                    )
     # def parse_reviews(self, response):
     #     beer_item = response.meta['beer']
     #     logging.debug('Attempting to parse reviews for beer: ' + str(beer_item['id']))

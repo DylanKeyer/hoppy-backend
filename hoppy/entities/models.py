@@ -2,18 +2,15 @@
 from hoppy import db
 from .enums import BeerType, BreweryType, SocialMediaType, ServingType
 
-class Brewery(db.Model):
-    __tablename__ = 'brewery'
-    '''Constraints'''
-    id = db.Column(db.Integer, primary_key=True)
-    '''Non-constraint columns'''
-    brewery_type = db.Column(db.Enum(BreweryType), nullable=False)
-    brewery_name = db.Column(db.String(32), nullable=False)
-    description = db.Column(db.Text)
-    created_dtm = db.Column(db.DateTime)
-    updated_dtm = db.Column(db.DateTime)
+class BaseModel(object):
+    def update(self, **kwargs):
+        # py2 & py3 compatibility do:
+        # from six import iteritems
+        # for key, value in six.iteritems(kwargs):
+        for key, value in  kwargs.items():
+            setattr(self, key, value)
 
-class Beer(db.Model):
+class Beer(BaseModel, db.Model):
     __tablename__ = 'beer'
     '''Constraints'''
     id = db.Column(db.Integer, primary_key=True)
@@ -27,6 +24,56 @@ class Beer(db.Model):
     ibu = db.Column(db.Integer)
     created_dtm = db.Column(db.DateTime)
     updated_dtm = db.Column(db.DateTime)
+
+class Brewery(BaseModel, db.Model):
+    __tablename__ = 'brewery'
+    '''Constraints'''
+    id = db.Column(db.Integer, primary_key=True)
+    '''Non-constraint columns'''
+    brewery_type = db.Column(db.Enum(BreweryType), nullable=False)
+    brewery_name = db.Column(db.String(32), nullable=False)
+    description = db.Column(db.Text)
+    created_dtm = db.Column(db.DateTime)
+    updated_dtm = db.Column(db.DateTime)
+
+class BreweryVenue(BaseModel, db.Model):
+    __tablename__ = 'brewery_venue'
+    '''Constraints'''
+    id = db.Column(db.Integer, primary_key=True)
+    brewery_id = db.Column(db.Integer, db.ForeignKey('brewery.id'), nullable=False)    
+    venue_id = db.Column(db.Integer, db.ForeignKey('venue.id'), nullable=False)
+
+class User(BaseModel, db.Model):
+    __tablename__ = 'user'
+    '''Constraints'''
+    id = db.Column(db.Integer, primary_key=True)
+    '''Non-constraint columns'''
+    user_name = db.Column(db.String(32), nullable=False)
+
+class Venue(BaseModel, db.Model):
+    __tablename__ = 'venue'
+    '''Constraints'''
+    id = db.Column(db.Integer, primary_key=True)
+    location = db.Column(db.Text)
+    longitude = db.Column(db.Float)
+    latitude = db.Column(db.Float)
+
+class Review(BaseModel, db.Model):
+    __tablename__ = 'review'
+    '''Constraints'''
+    id = db.Column(db.Integer, primary_key=True)
+    beer_id = db.Column(db.Integer, db.ForeignKey("beer.id"), nullable=False)
+    beer = db.relationship("Beer", foreign_keys=beer_id)
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
+    user = db.relationship("User", foreign_keys=user_id)
+    venue_id = db.Column(db.Integer, db.ForeignKey("venue.id"))
+    venue = db.relationship("Venue", foreign_keys=venue_id)
+    '''Non-constraint columns'''
+    title = db.Column(db.Text)
+    description = db.Column(db.Text)
+    rating = db.Column(db.Float)
+    serving_type = db.Column(db.Enum(ServingType))
+
 
 # SQLALCHEMY STUFF #
 # class Beer(Entity, Base):

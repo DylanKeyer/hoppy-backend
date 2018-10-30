@@ -21,7 +21,8 @@ ma = Marshmallow(app)
 # migrate changes
 migrate = Migrate(app, db)
 
-from hoppy.api.resources import BeerResource, BreweryResource
+from hoppy.api.resources import BeerResource, BreweryResource, BreweryVenueResource
 api = Api(app)
 api.add_resource(BreweryResource, '/api/brewery', '/api/brewery/<id>')
 api.add_resource(BeerResource, '/api/beer', '/api/beer/', '/api/beer/<id>')
+api.add_resource(BreweryVenueResource, '/api/brewery/<brewery_id>/venues', '/api/brewery/venues/' # for posts)

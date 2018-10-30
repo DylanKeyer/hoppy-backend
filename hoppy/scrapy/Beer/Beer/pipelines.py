@@ -1,4 +1,4 @@
-from Beer.items import Beer, Brewery, Review, User, Venue
+from Beer.items import Beer, Brewery, Review, User, Venue, BreweryVenue
 # from ...hoppy import db
 # from ...hoppy.entities.schemas import BeerSchema, BrewerySchema
 # from ...hoppy.entities.models import Beer, Brewery
@@ -34,17 +34,19 @@ class HoppyAPIPipeline(object):
     def __init__(self):
         self.__base_url = 'http://localhost:5000/api/'
         self.urls = {
-            'beer': self.__base_url + 'beer',
-            'brewery': 'http://localhost:5000/api/brewery'
+            Beer: self.__base_url + 'beer',
+            Brewery: self.__base_url + 'brewery',
+            BreweryVenue: self.__base_url + 'brewery/venues'
         }
         self.headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
 
     def process_item(self, item, spider):
         json_data = json.dumps(dict(item))
-        if isinstance(item, Beer):
-            r = requests.post(self.urls['beer'], data=json_data)
-        elif isinstance(item, Brewery):
-            r = requests.post(self.urls['brewery'], data=json_data)
+        r = requests.post(self.urls[type(item)], data=json_data)
+        # if isinstance(item, Beer):
+        #     r = requests.post(self.urls['beer'], data=json_data)
+        # elif isinstance(item, Brewery):
+        #     r = requests.post(self.urls['brewery'], data=json_data)
         return item
 
 class MySQLPipeline(object):

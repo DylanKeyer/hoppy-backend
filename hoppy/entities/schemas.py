@@ -1,7 +1,7 @@
 # from marshmallow import Schema, fields
 from marshmallow_enum import EnumField
-from ..entities.models import Beer, Brewery
-from .enums import BeerType, BreweryType, SocialMediaType, ServingType
+from ..entities.models import Beer, Brewery, User, Venue, Review, BreweryVenue
+from .enums import BeerType, BreweryType, VenueType, SocialMediaType, ServingType
 from hoppy import ma
 
 class BeerSchema(ma.ModelSchema):
@@ -9,21 +9,29 @@ class BeerSchema(ma.ModelSchema):
     class Meta:
         model = Beer
         include_fk=True
-
-    # _links = ma.Hyperlinks({
-    #     'self': ma.URLFor('beer_detail', id='<id>'),
-    #     'collection': ma.URLFor('beers')
-    # })
     
 class BrewerySchema(ma.ModelSchema):
     brewery_type = EnumField(BreweryType, by_value=True)
     class Meta:
         model = Brewery
+
+class BreweryVenueSchema(ma.ModelSchema):
+    class Meta:
+        model = BreweryVenue
+
+class UserSchema(ma.ModelSchema):
+    class Meta:
+        model = User
     
-    # _links = ma.Hyperlinks({
-    #     'self': ma.URLFor('brewery_detail', id='<id>'),
-    #     'collection': ma.URLFor('breweries')
-    # })
+class VenueSchema(ma.ModelSchema):
+    venue_type = EnumField(VenueType, by_value=True)
+    class Meta:
+        model = Venue
+
+class ReviewSchema(ma.ModelSchema):
+    class Meta:
+        model = Review
+
 # class SysUserSchema(Schema):
 #     id = fields.Number()
 #     person_number = fields.String()

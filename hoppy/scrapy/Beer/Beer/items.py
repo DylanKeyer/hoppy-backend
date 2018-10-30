@@ -19,12 +19,9 @@ class Brewery(Item):
     created_dtm = Field()
     updated_dtm = Field()
 
-class BreweryLocation(Item):
+class BreweryVenue(Item):
     brewery_id = Field()
-    name = Field()
-    longitude = Field()
-    latitude = Field()
-    location = Field()
+    venue_id = Field()
 
 class Venue(Item):
     id = Field()
